@@ -13,45 +13,31 @@
             background-color: #f4f6f9;
         }
 
-        /* BARRA SUPERIOR COLOR GUINDA (IGUAL AL BOTÓN DE BUSCAR) */
+        /* BARRA SUPERIOR OSCURA ORIGINAL */
         .gob-nav {
-            background-color: #7a1c31; /* Mismo color guinda oficial */
+            background-color: #0c231e; /* Color verde/marrón oscuro original */
             color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 12px 40px;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .gob-nav-left {
             display: flex;
             align-items: center;
-            gap: 10px;
         }
 
-        /* Escudo diseñado con CSS puro para asegurar que se vea SIEMPRE */
-        .escudo-seguro {
-            width: 24px;
-            height: 18px;
-            background: linear-gradient(to right, #006847 33.3%, #ffffff 33.3%, #ffffff 66.6%, #ce1126 66.6%);
-            border-radius: 2px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-            display: inline-block;
-            position: relative;
-        }
-        
-        .escudo-seguro::after {
-            content: '🦅';
-            position: absolute;
-            font-size: 9px;
-            left: 7px;
-            top: 1px;
+        /* Contenedor del Logotipo Oficial */
+        .gob-logo-container {
+            display: flex;
+            align-items: center;
         }
 
-        .gob-nav-title {
-            font-weight: bold;
-            letter-spacing: 0.5px;
+        .gob-logo-container img {
+            height: 32px; /* Tamaño ideal para la barra superior */
+            display: block;
         }
 
         /* Contenedor derecho para Trámites, Gobierno y Lupa */
@@ -64,8 +50,8 @@
         .gob-nav-right-group a {
             color: #ffffff;
             text-decoration: none;
-            opacity: 0.9;
-            font-weight: 500;
+            opacity: 0.85;
+            font-weight: 400; /* Fuente original del código pasado */
         }
 
         .gob-nav-right-group a:hover {
@@ -135,16 +121,16 @@
             max-width: 650px;
             margin: 0 auto;
             background: white;
-            padding: 5px 5px 5px 15px; /* Espacio extra a la izquierda para la lupa */
+            padding: 5px 5px 5px 15px;
             border-radius: 30px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        /* NUEVA LUPA GRIS DENTRO DEL BUSCADOR */
+        /* Lupa gris dentro del buscador */
         .icon-lupa-input {
             width: 14px;
             height: 14px;
-            border: 2px solid #a0aec0; /* Color gris suave */
+            border: 2px solid #a0aec0;
             border-radius: 50%;
             position: relative;
             display: inline-block;
@@ -231,11 +217,13 @@
 </head>
 <body>
 
-    <!-- BARRA SUPERIOR GUINDA CON LOGO SEGURO -->
+    <!-- BARRA SUPERIOR OSCURA CON TIPOGRAFÍA PASADA Y LOGO NUEVO -->
     <nav class="gob-nav">
         <div class="gob-nav-left">
-            <span class="escudo-seguro"></span>
-            <span class="gob-nav-title">Gobierno de México</span>
+            <div class="gob-logo-container">
+                <!-- Tu imagen cargada de forma directa y 100% segura -->
+                <img src="https://wikimedia.org" alt="Gobierno de México">
+            </div>
         </div>
         
         <div class="gob-nav-right-group">
@@ -257,7 +245,7 @@
 
         <h1>Portal de Consulta de Trámites</h1>
         
-        <!-- BUSCADOR CON LUPA INTERNA INCLUIDA -->
+        <!-- BUSCADOR CON LUPA INTERNA -->
         <div class="search-container">
             <span class="icon-lupa-input"></span>
             <input type="text" placeholder="Escribe el trámite que deseas consultar...">
@@ -287,4 +275,5 @@
 
 </body>
 </html>
+
 
