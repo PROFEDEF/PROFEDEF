@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal de Consulta de Trámites - Clon</title>
+    <title>Portal de Consulta de Trámites - Clon Fiel</title>
     <style>
         /* Estilos generales */
         body {
@@ -13,41 +13,36 @@
             background-color: #f4f6f9;
         }
 
-        /* --- NUEVA BARRA DE GOBIERNO (SUPERIOR) --- */
+        /* BARRA SUPERIOR OSCURA */
         .gob-nav {
-            background-color: #0c231e; /* Color verde/marrón oscuro oficial */
+            background-color: #0c231e; /* Verde/marrón institucional */
             color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 40px;
+            padding: 12px 60px;
             font-size: 13px;
         }
 
         .gob-nav-left {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
         }
 
         .gob-nav-left img {
-            height: 24px; /* Logotipo de México */
+            height: 24px; /* Logo Gobierno de México */
         }
 
         .gob-nav-links {
             display: flex;
-            gap: 15px;
+            gap: 20px;
         }
 
         .gob-nav-links a {
-            color: #fff;
+            color: #ffffff;
             text-decoration: none;
             opacity: 0.85;
-            transition: opacity 0.2s;
-        }
-
-        .gob-nav-links a:hover {
-            opacity: 1;
         }
 
         .gob-nav-right {
@@ -57,11 +52,7 @@
             opacity: 0.85;
         }
 
-        .gob-nav-right:hover {
-            opacity: 1;
-        }
-
-        /* Lupa dibujada con CSS puro */
+        /* Lupa blanca del extremo derecho */
         .icon-lupa {
             width: 12px;
             height: 12px;
@@ -81,115 +72,160 @@
             transform: rotate(-45deg);
         }
 
-        /* --- SECCIÓN HERO AZUL --- */
+        /* SECCIÓN AZUL PRINCIPAL (HERO) */
         .hero-section {
-            background: linear-gradient(135deg, #1c3b57 0%, #2c5270 100%);
+            background: linear-gradient(180deg, #1f3a52 0%, #2a4d6c 100%);
             color: white;
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 20px 80px 20px;
+            position: relative;
+        }
+
+        /* Menú interno grisáceo/transparente de la foto */
+        .sub-menu {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+            font-size: 14px;
+        }
+
+        .sub-menu a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .sub-menu a:hover {
+            color: white;
         }
 
         .hero-section h1 {
-            font-size: 32px;
-            margin-bottom: 25px;
+            font-size: 34px;
+            margin: 0 0 30px 0;
             font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
-        /* Buscador */
+        /* CONTENEDOR DEL BUSCADOR */
         .search-container {
             display: flex;
-            max-width: 600px;
-            margin: 0 auto 40px auto;
+            max-width: 650px;
+            margin: 0 auto;
             background: white;
-            padding: 6px;
+            padding: 5px;
             border-radius: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .search-container input {
             flex: 1;
             border: none;
-            padding: 12px 20px;
-            font-size: 16px;
+            padding: 14px 25px;
+            font-size: 15px;
             border-radius: 30px;
             outline: none;
+            color: #333;
         }
 
         .search-container button {
-            background-color: #7a1c31; /* Color guinda del botón */
+            background-color: #7a1c31; /* Color guinda del botón buscar */
             color: white;
             border: none;
-            padding: 12px 25px;
-            font-size: 16px;
+            padding: 12px 35px;
+            font-size: 15px;
             border-radius: 30px;
             cursor: pointer;
             font-weight: bold;
         }
 
-        /* Contenedor de Tarjetas */
+        /* CONTENEDOR DE LAS 4 TARJETAS BLANCAS */
         .cards-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
-            max-width: 1000px;
-            margin: -30px auto 0 auto;
+            max-width: 1050px;
+            margin: -40px auto 0 auto; /* Empuja las tarjetas hacia arriba de la sección azul */
             padding: 0 20px;
+            position: relative;
+            z-index: 10;
         }
 
+        /* Tarjeta individual */
         .stat-card {
             background: white;
-            border-radius: 8px;
-            padding: 20px;
+            border-radius: 4px;
+            padding: 25px 15px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-bottom: 5px solid #7a1c31;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-bottom: 5px solid #7a1c31; /* Línea guinda inferior */
         }
 
         .stat-number {
-            font-size: 36px;
+            font-size: 38px;
             font-weight: bold;
             color: #333;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
         .stat-label {
-            font-size: 12px;
+            font-size: 11px;
             color: #666;
             text-transform: uppercase;
             font-weight: bold;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
+        }
+
+        /* Ajuste para pantallas pequeñas (Celulares) */
+        @media (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: -20px;
+            }
+            .gob-nav, .sub-menu {
+                display: none; /* Esconde menús en pantallas muy chicas para mantener orden */
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- NUEVA BARRA SUPERIOR GOB.MX -->
+    <!-- BARRA SUPERIOR INSTITUCIONAL -->
     <nav class="gob-nav">
         <div class="gob-nav-left">
-            <!-- Escudo oficial de México -->
             <img src="https://diputados.gob.mx" alt="Gobierno de México">
-            <div class="gob-nav-links">
-                <a href="#">Trámites</a>
-                <a href="#">Gobierno</a>
-            </div>
+        </div>
+        <div class="gob-nav-links">
+            <a href="#">Trámites</a>
+            <a href="#">Gobierno</a>
         </div>
         <div class="gob-nav-right">
-            <!-- Icono de lupa -->
             <span class="icon-lupa"></span>
         </div>
     </nav>
 
-    <!-- Bloque Azul Principal -->
+    <!-- SECCIÓN AZUL PRINCIPAL -->
     <div class="hero-section">
+        
+        <!-- Menú interno de la foto -->
+        <div class="sub-menu">
+            <a href="#">Inicio</a>
+            <a href="#">Trámites</a>
+            <a href="#">Gobierno</a>
+            <a href="#">Participa</a>
+            <a href="#">Datos</a>
+        </div>
+
         <h1>Portal de Consulta de Trámites</h1>
         
+        <!-- Buscador con el texto gris de fondo -->
         <div class="search-container">
-            <input type="text" placeholder="¿Qué trámite estás buscando o necesitas?">
+            <input type="text" placeholder="Escribe el trámite que deseas consultar...">
             <button>Buscar</button>
         </div>
     </div>
 
-    <!-- Bloque de las 4 Tarjetas -->
+    <!-- LAS 4 TARJETAS INFERIORES -->
     <div class="cards-container">
         <div class="stat-card">
             <div class="stat-number">2200</div>
