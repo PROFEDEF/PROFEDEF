@@ -18,7 +18,7 @@
             background-color: #0c231e; /* Verde/marrón institucional */
             color: white;
             display: flex;
-            justify-content: space-between; /* Separa el logo a la izq y los enlaces a la der */
+            justify-content: space-between; /* Separa el logo a la izquierda y el menú a la derecha */
             align-items: center;
             padding: 12px 40px;
             font-size: 13px;
@@ -29,31 +29,32 @@
             align-items: center;
         }
 
-        /* Ajuste para que el escudo de México cargue y se vea bien */
+        /* Escudo de México con filtro blanco para que resalte y cargue siempre */
         .gob-nav-left img {
             height: 28px; 
             display: block;
+            filter: brightness(0) invert(1); /* Convierte el logo a blanco puro para máxima visibilidad */
         }
 
-        /* Contenedor derecho que agrupa los textos y la lupa */
+        /* Contenedor agrupado y alineado completamente a la derecha */
         .gob-nav-right-group {
             display: flex;
             align-items: center;
-            gap: 25px; /* Espacio entre Trámites, Gobierno y la Lupa */
+            gap: 25px; /* Espacio de separación interno */
         }
 
         .gob-nav-right-group a {
             color: #ffffff;
             text-decoration: none;
             opacity: 0.85;
-            font-weight: 400;
+            font-weight: 500;
         }
 
         .gob-nav-right-group a:hover {
             opacity: 1;
         }
 
-        /* Lupa blanca */
+        /* Icono de Lupa Blanca */
         .icon-lupa {
             width: 12px;
             height: 12px;
@@ -83,7 +84,7 @@
             position: relative;
         }
 
-        /* Menú interno grisáceo/transparente de la foto */
+        /* Menú interno de la foto */
         .sub-menu {
             display: flex;
             justify-content: center;
@@ -192,14 +193,14 @@
 </head>
 <body>
 
-    <!-- BARRA SUPERIOR INSTITUCIONAL CORREGIDA -->
+    <!-- BARRA SUPERIOR INSTITUCIONAL ACTUALIZADA -->
     <nav class="gob-nav">
         <div class="gob-nav-left">
-            <!-- Escudo de México visible -->
-            <img src="https://inifap.gob.mx" alt="Gobierno de México">
+            <!-- Escudo de México desde fuente segura (Wikipedia) -->
+            <img src="https://wikimedia.org" alt="Gobierno de México">
         </div>
         
-        <!-- Bloque alineado completamente a la derecha -->
+        <!-- Bloque agrupado completamente hacia el extremo derecho -->
         <div class="gob-nav-right-group">
             <a href="#">Trámites</a>
             <a href="#">Gobierno</a>
