@@ -18,41 +18,42 @@
             background-color: #0c231e; /* Verde/marrón institucional */
             color: white;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Separa el logo a la izq y los enlaces a la der */
             align-items: center;
-            padding: 12px 60px;
+            padding: 12px 40px;
             font-size: 13px;
         }
 
         .gob-nav-left {
             display: flex;
             align-items: center;
-            gap: 25px;
         }
 
+        /* Ajuste para que el escudo de México cargue y se vea bien */
         .gob-nav-left img {
-            height: 24px; /* Logo Gobierno de México */
+            height: 28px; 
+            display: block;
         }
 
-        .gob-nav-links {
+        /* Contenedor derecho que agrupa los textos y la lupa */
+        .gob-nav-right-group {
             display: flex;
-            gap: 20px;
+            align-items: center;
+            gap: 25px; /* Espacio entre Trámites, Gobierno y la Lupa */
         }
 
-        .gob-nav-links a {
+        .gob-nav-right-group a {
             color: #ffffff;
             text-decoration: none;
             opacity: 0.85;
+            font-weight: 400;
         }
 
-        .gob-nav-right {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            opacity: 0.85;
+        .gob-nav-right-group a:hover {
+            opacity: 1;
         }
 
-        /* Lupa blanca del extremo derecho */
+        /* Lupa blanca */
         .icon-lupa {
             width: 12px;
             height: 12px;
@@ -60,6 +61,7 @@
             border-radius: 50%;
             position: relative;
             display: inline-block;
+            cursor: pointer;
         }
         .icon-lupa::after {
             content: '';
@@ -145,7 +147,7 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             max-width: 1050px;
-            margin: -40px auto 0 auto; /* Empuja las tarjetas hacia arriba de la sección azul */
+            margin: -40px auto 0 auto;
             padding: 0 20px;
             position: relative;
             z-index: 10;
@@ -158,7 +160,7 @@
             padding: 25px 15px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-bottom: 5px solid #7a1c31; /* Línea guinda inferior */
+            border-bottom: 5px solid #7a1c31;
         }
 
         .stat-number {
@@ -183,23 +185,24 @@
                 margin-top: -20px;
             }
             .gob-nav, .sub-menu {
-                display: none; /* Esconde menús en pantallas muy chicas para mantener orden */
+                display: none;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- BARRA SUPERIOR INSTITUCIONAL -->
+    <!-- BARRA SUPERIOR INSTITUCIONAL CORREGIDA -->
     <nav class="gob-nav">
         <div class="gob-nav-left">
-            <img src="https://diputados.gob.mx" alt="Gobierno de México">
+            <!-- Escudo de México visible -->
+            <img src="https://inifap.gob.mx" alt="Gobierno de México">
         </div>
-        <div class="gob-nav-links">
+        
+        <!-- Bloque alineado completamente a la derecha -->
+        <div class="gob-nav-right-group">
             <a href="#">Trámites</a>
             <a href="#">Gobierno</a>
-        </div>
-        <div class="gob-nav-right">
             <span class="icon-lupa"></span>
         </div>
     </nav>
@@ -207,7 +210,7 @@
     <!-- SECCIÓN AZUL PRINCIPAL -->
     <div class="hero-section">
         
-        <!-- Menú interno de la foto -->
+        <!-- Menú interno -->
         <div class="sub-menu">
             <a href="#">Inicio</a>
             <a href="#">Trámites</a>
@@ -218,7 +221,7 @@
 
         <h1>Portal de Consulta de Trámites</h1>
         
-        <!-- Buscador con el texto gris de fondo -->
+        <!-- Buscador -->
         <div class="search-container">
             <input type="text" placeholder="Escribe el trámite que deseas consultar...">
             <button>Buscar</button>
