@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Gob MX</title>
-    <!-- Importación de la tipografía oficial utilizada en el portal -->
+    <!-- Importación de la fuente real utilizada en portal-gob-mx.vercel.app -->
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        /* Estilos Base y Tipografía */
+        /* Estilos Globales de la Página Original */
         body {
-            font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f6f9;
@@ -17,7 +17,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 1. BARRA SUPERIOR INSTITUCIONAL (OSCURA VERDE) */
+        /* 1. BARRA SUPERIOR INSTITUCIONAL (VERDE OSCURO O GOB.MX) */
         .gob-nav {
             background-color: #0c231e;
             padding: 10px 15px;
@@ -42,9 +42,9 @@
             align-items: center;
         }
 
-        /* Logotipo vectorial HD transparente libre de bloqueos */
+        /* Ajuste de escala exacto del logotipo transparente original */
         .gob-nav-left img {
-            height: 30px;
+            height: 32px;
             display: block;
         }
 
@@ -62,7 +62,7 @@
             letter-spacing: 0.3px;
         }
 
-        /* Icono de Lupa de la Barra de Navegación */
+        /* Icono de Lupa de la Barra Superior */
         .icon-search-nav {
             width: 13px;
             height: 13px;
@@ -83,10 +83,10 @@
             transform: rotate(-45deg);
         }
 
-        /* 2. SECCIÓN PRINCIPAL (HERO) AZUL */
+        /* 2. SECCIÓN AZUL DE TRÁMITES (HERO) */
         .hero-section {
             background-image: linear-gradient(to bottom, #1c3b57 0%, #2c5270 100%);
-            padding: 30px 15px 70px 15px;
+            padding: 35px 15px 75px 15px;
             text-align: center;
             color: #ffffff;
         }
@@ -96,7 +96,7 @@
             margin: 0 auto;
         }
 
-        /* Menú horizontal blanco con transparencias */
+        /* Menú horizontal con transparencia */
         .sub-menu {
             display: flex;
             justify-content: center;
@@ -123,7 +123,7 @@
             letter-spacing: -0.5px;
         }
 
-        /* 3. BUSCADOR INTEGRADO CON LUPA INTERNA */
+        /* 3. BUSCADOR CON LUPA INTERNA E INTRODUCCIÓN DE TEXTO */
         .search-wrapper {
             position: relative;
             max-width: 620px;
@@ -136,7 +136,7 @@
             box-sizing: border-box;
         }
 
-        /* Lupa gris posicionada al inicio interno del cuadro de texto */
+        /* Lupa gris al inicio del input */
         .icon-search-input {
             width: 14px;
             height: 14px;
@@ -161,16 +161,16 @@
         .search-wrapper input {
             width: 100%;
             border: none;
-            padding: 14px 15px 14px 45px; /* Margen para no pisar la lupa interna */
+            padding: 14px 15px 14px 45px; /* Evita que el texto tape la lupa */
             font-size: 15px;
             border-radius: 4px 0 0 4px;
             outline: none;
             color: #333333;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .search-wrapper button {
-            background-color: #6a1c32; /* El guinda exacto */
+            background-color: #6a1c32; /* Tonalidad guinda exacta */
             color: #ffffff;
             border: none;
             padding: 0 25px;
@@ -179,7 +179,7 @@
             border-radius: 0 4px 4px 0;
             cursor: pointer;
             font-weight: 600;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             transition: background-color 0.2s ease;
         }
 
@@ -187,7 +187,7 @@
             background-color: #541424;
         }
 
-        /* 4. BLOQUE DE LAS 4 TARJETAS DE DATOS SUPERPUESTAS */
+        /* 4. SECCIÓN DE LAS CUATRO TARJETAS DE CONTADORES */
         .cards-section {
             max-width: 1140px;
             margin: -35px auto 40px auto;
@@ -206,10 +206,10 @@
         .data-card {
             background: #ffffff;
             border-radius: 4px;
-            padding: 20px 10px;
+            padding: 22px 10px;
             text-align: center;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            border-bottom: 4px solid #6a1c32; /* Línea inferior guinda */
+            border-bottom: 4px solid #6a1c32; /* Línea de color guinda inferior */
             box-sizing: border-box;
         }
 
@@ -226,7 +226,7 @@
             font-weight: 600;
         }
 
-        /* Ajustes de Responsividad */
+        /* Reglas de Responsividad (Mobile) */
         @media (max-width: 992px) {
             .cards-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -238,7 +238,7 @@
                 font-size: 28px;
             }
             .sub-menu {
-                display: none; /* Oculta en pantallas pequeñas tal cual la referencia */
+                display: none; /* Se oculta dinámicamente en celulares */
             }
             .gob-nav-right {
                 gap: 10px;
@@ -254,11 +254,11 @@
 </head>
 <body>
 
-    <!-- 1. Barra de Navegación Institucional Verde Oscura -->
+    <!-- 1. Barra de Navegación del Portal de Referencia -->
     <nav class="gob-nav">
         <div class="gob-nav-container">
             <div class="gob-nav-left">
-                <!-- Imagen transparente oficial con filtro optimizado -->
+                <!-- Logotipo vectorial en PNG transparente que no se rompe nunca -->
                 <img src="https://wikimedia.org" alt="Gobierno de México">
             </div>
             <div class="gob-nav-right">
@@ -269,7 +269,7 @@
         </div>
     </nav>
 
-    <!-- 2. Sección Principal Azul con Menú de Navegación -->
+    <!-- 2. Cuerpo Principal Azul -->
     <div class="hero-section">
         <div class="hero-container">
             <div class="sub-menu">
@@ -281,7 +281,7 @@
             </div>
             <h1>Portal de Consulta de Trámites</h1>
             
-            <!-- 3. Formulario de Búsqueda Con Lupa Interna -->
+            <!-- 3. Entrada de Búsqueda -->
             <div class="search-wrapper">
                 <span class="icon-search-input"></span>
                 <input type="text" placeholder="Buscar">
@@ -290,7 +290,7 @@
         </div>
     </div>
 
-    <!-- 4. Bloque de Módulos Estadísticos -->
+    <!-- 4. Cuadrícula de Tarjetas Estadísticas -->
     <section class="cards-section">
         <div class="cards-grid">
             <div class="data-card">
@@ -314,5 +314,3 @@
 
 </body>
 </html>
-
-
