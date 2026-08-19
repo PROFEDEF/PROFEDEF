@@ -13,40 +13,58 @@
             background-color: #f4f6f9;
         }
 
-        /* BARRA SUPERIOR OSCURA */
+        /* BARRA SUPERIOR COLOR GUINDA (IGUAL AL BOTÓN DE BUSCAR) */
         .gob-nav {
-            background-color: #0c231e; /* Verde/marrón institucional */
+            background-color: #7a1c31; /* Mismo color guinda oficial */
             color: white;
             display: flex;
-            justify-content: space-between; /* Separa el logo a la izquierda y el menú a la derecha */
+            justify-content: space-between;
             align-items: center;
             padding: 12px 40px;
-            font-size: 13px;
+            font-size: 14px;
         }
 
         .gob-nav-left {
             display: flex;
             align-items: center;
+            gap: 10px;
         }
 
-        /* Escudo de México con filtro blanco para que resalte y cargue siempre */
-        .gob-nav-left img {
-            height: 28px; 
-            display: block;
-            filter: brightness(0) invert(1); /* Convierte el logo a blanco puro para máxima visibilidad */
+        /* Escudo diseñado con CSS puro para asegurar que se vea SIEMPRE */
+        .escudo-seguro {
+            width: 24px;
+            height: 18px;
+            background: linear-gradient(to right, #006847 33.3%, #ffffff 33.3%, #ffffff 66.6%, #ce1126 66.6%);
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            display: inline-block;
+            position: relative;
+        }
+        
+        .escudo-seguro::after {
+            content: '🦅';
+            position: absolute;
+            font-size: 9px;
+            left: 7px;
+            top: 1px;
         }
 
-        /* Contenedor agrupado y alineado completamente a la derecha */
+        .gob-nav-title {
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        /* Contenedor derecho para Trámites, Gobierno y Lupa */
         .gob-nav-right-group {
             display: flex;
             align-items: center;
-            gap: 25px; /* Espacio de separación interno */
+            gap: 25px;
         }
 
         .gob-nav-right-group a {
             color: #ffffff;
             text-decoration: none;
-            opacity: 0.85;
+            opacity: 0.9;
             font-weight: 500;
         }
 
@@ -54,8 +72,8 @@
             opacity: 1;
         }
 
-        /* Icono de Lupa Blanca */
-        .icon-lupa {
+        /* Lupa blanca de la barra de navegación */
+        .icon-lupa-nav {
             width: 12px;
             height: 12px;
             border: 2px solid white;
@@ -64,7 +82,7 @@
             display: inline-block;
             cursor: pointer;
         }
-        .icon-lupa::after {
+        .icon-lupa-nav::after {
             content: '';
             position: absolute;
             width: 2px;
@@ -75,7 +93,7 @@
             transform: rotate(-45deg);
         }
 
-        /* SECCIÓN AZUL PRINCIPAL (HERO) */
+        /* SECCIÓN AZUL PRINCIPAL */
         .hero-section {
             background: linear-gradient(180deg, #1f3a52 0%, #2a4d6c 100%);
             color: white;
@@ -84,7 +102,7 @@
             position: relative;
         }
 
-        /* Menú interno de la foto */
+        /* Menú interno */
         .sub-menu {
             display: flex;
             justify-content: center;
@@ -113,18 +131,40 @@
         /* CONTENEDOR DEL BUSCADOR */
         .search-container {
             display: flex;
+            align-items: center;
             max-width: 650px;
             margin: 0 auto;
             background: white;
-            padding: 5px;
+            padding: 5px 5px 5px 15px; /* Espacio extra a la izquierda para la lupa */
             border-radius: 30px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* NUEVA LUPA GRIS DENTRO DEL BUSCADOR */
+        .icon-lupa-input {
+            width: 14px;
+            height: 14px;
+            border: 2px solid #a0aec0; /* Color gris suave */
+            border-radius: 50%;
+            position: relative;
+            display: inline-block;
+            margin-right: -5px;
+        }
+        .icon-lupa-input::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 6px;
+            background: #a0aec0;
+            bottom: -4px;
+            right: -2px;
+            transform: rotate(-45deg);
         }
 
         .search-container input {
             flex: 1;
             border: none;
-            padding: 14px 25px;
+            padding: 14px 15px;
             font-size: 15px;
             border-radius: 30px;
             outline: none;
@@ -132,7 +172,7 @@
         }
 
         .search-container button {
-            background-color: #7a1c31; /* Color guinda del botón buscar */
+            background-color: #7a1c31; /* Color guinda del botón */
             color: white;
             border: none;
             padding: 12px 35px;
@@ -142,7 +182,7 @@
             font-weight: bold;
         }
 
-        /* CONTENEDOR DE LAS 4 TARJETAS BLANCAS */
+        /* CONTENEDOR DE LAS 4 TARJETAS */
         .cards-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -154,7 +194,6 @@
             z-index: 10;
         }
 
-        /* Tarjeta individual */
         .stat-card {
             background: white;
             border-radius: 4px;
@@ -179,7 +218,6 @@
             letter-spacing: 0.3px;
         }
 
-        /* Ajuste para pantallas pequeñas (Celulares) */
         @media (max-width: 768px) {
             .cards-container {
                 grid-template-columns: repeat(2, 1fr);
@@ -193,25 +231,22 @@
 </head>
 <body>
 
-    <!-- BARRA SUPERIOR INSTITUCIONAL ACTUALIZADA -->
+    <!-- BARRA SUPERIOR GUINDA CON LOGO SEGURO -->
     <nav class="gob-nav">
         <div class="gob-nav-left">
-            <!-- Escudo de México desde fuente segura (Wikipedia) -->
-            <img src="https://wikimedia.org" alt="Gobierno de México">
+            <span class="escudo-seguro"></span>
+            <span class="gob-nav-title">Gobierno de México</span>
         </div>
         
-        <!-- Bloque agrupado completamente hacia el extremo derecho -->
         <div class="gob-nav-right-group">
             <a href="#">Trámites</a>
             <a href="#">Gobierno</a>
-            <span class="icon-lupa"></span>
+            <span class="icon-lupa-nav"></span>
         </div>
     </nav>
 
     <!-- SECCIÓN AZUL PRINCIPAL -->
     <div class="hero-section">
-        
-        <!-- Menú interno -->
         <div class="sub-menu">
             <a href="#">Inicio</a>
             <a href="#">Trámites</a>
@@ -222,8 +257,9 @@
 
         <h1>Portal de Consulta de Trámites</h1>
         
-        <!-- Buscador -->
+        <!-- BUSCADOR CON LUPA INTERNA INCLUIDA -->
         <div class="search-container">
+            <span class="icon-lupa-input"></span>
             <input type="text" placeholder="Escribe el trámite que deseas consultar...">
             <button>Buscar</button>
         </div>
