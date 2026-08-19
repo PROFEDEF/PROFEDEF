@@ -2,41 +2,134 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi Web con Diseño</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Consulta de Trámites - Clon</title>
     <style>
-        /* Aquí empieza el diseño (CSS) */
+        /* Estilos generales */
         body {
-            background-color: #f0f4f8; /* Un color de fondo gris azulado suave */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Letra más moderna */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
         }
-        .tarjeta {
-            background-color: white;
-            padding: 40px;
-            border-radius: 15px; /* Bordes redondos */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra suave */
+
+        /* Sección principal azul de la imagen */
+        .hero-section {
+            background: linear-gradient(135deg, #1c3b57 0%, #2c5270 100%);
+            color: white;
             text-align: center;
+            padding: 60px 20px;
         }
-        h1 {
-            color: #2b6cb0; /* Texto de color azul bonito */
-            margin-bottom: 20px;
+
+        .hero-section h1 {
+            font-size: 32px;
+            margin-bottom: 25px;
+            font-weight: 600;
         }
-        p {
-            color: #4a5568; /* Texto gris oscuro */
-            font-size: 18px;
+
+        /* Contenedor del Buscador */
+        .search-container {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            background: white;
+            padding: 6px;
+            border-radius: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .search-container input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 30px;
+            outline: none;
+        }
+
+        .search-container button {
+            background-color: #7a1c31; /* Color guinda del botón buscar */
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .search-container button:hover {
+            background-color: #5a1424;
+        }
+
+        /* Contenedor de las 4 tarjetas inferiores */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: -30px auto 0 auto; /* Hace que floten sobre el fondo azul */
+            padding: 0 20px;
+        }
+
+        /* Estilo de cada tarjeta individual */
+        .stat-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-bottom: 5px solid #7a1c31; /* Línea guinda inferior */
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
 <body>
 
-    <!-- El contenido de tu página metido en una tarjeta blanca -->
-    <div class="tarjeta">
-        <h1>¡Hola Mundo!</h1>
-        <p>Estoy aprendiendo a usar Vercel y ya le di diseño a mi página. 🚀</p>
+    <!-- Bloque Azul Superior -->
+    <div class="hero-section">
+        <h1>Portal de Consulta de Trámites</h1>
+        
+        <!-- Barra de Búsqueda -->
+        <div class="search-container">
+            <input type="text" placeholder="¿Qué trámite estás buscando o necesitas?">
+            <button>Buscar</button>
+        </div>
+    </div>
+
+    <!-- Bloque de las 4 Tarjetas de Contadores numéricos -->
+    <div class="cards-container">
+        <div class="stat-card">
+            <div class="stat-number">2200</div>
+            <div class="stat-label">Visualizadores de datos</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">6285</div>
+            <div class="stat-label">Bases de datos</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">184</div>
+            <div class="stat-label">Instituciones</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">28</div>
+            <div class="stat-label">Categorías</div>
+        </div>
     </div>
 
 </body>
