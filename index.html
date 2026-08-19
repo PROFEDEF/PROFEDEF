@@ -16,7 +16,7 @@
 
         /* 1. BARRA SUPERIOR INSTITUCIONAL (OSCURA VERDE) */
         .gob-nav {
-            background-color: #0c231e; /* El color exacto de la página que copias */
+            background-color: #0c231e; /* El color exacto de la página que estás clonando */
             padding: 10px 15px;
             display: flex;
             justify-content: space-between;
@@ -38,9 +38,9 @@
             align-items: center;
         }
 
-        /* Contenedor del logotipo SVG seguro */
-        .gob-logo-svg {
-            height: 34px;
+        /* Enlace de la imagen oficial con fondo transparente directo */
+        .gob-nav-left img {
+            height: 30px;
             display: block;
         }
 
@@ -159,10 +159,6 @@
             color: #333333;
         }
 
-        .search-wrapper wrapper input::placeholder {
-            color: #757575;
-        }
-
         .search-wrapper button {
             background-color: #6a1c32; /* El guinda exacto */
             color: #ffffff;
@@ -232,19 +228,8 @@
     <nav class="gob-nav">
         <div class="gob-nav-container">
             <div class="gob-nav-left">
-                <!-- LOGOTIPO EN CÓDIGO VECTORIAL (SVG): No depende de internet, CARGA SIEMPRE -->
-                <svg class="gob-logo-svg" viewBox="0 0 260 50" xmlns="http://w3.org">
-                    <!-- Círculo Dorado del Escudo -->
-                    <circle cx="25" cy="25" r="18" fill="none" stroke="#D4AF37" stroke-width="2"/>
-                    <circle cx="25" cy="25" r="14" fill="none" stroke="#D4AF37" stroke-width="1" stroke-dasharray="2,2"/>
-                    <!-- Silueta del Águila Simplificada -->
-                    <path d="M21 20 C21 16, 29 16, 29 20 C29 24, 25 32, 25 32 Z" fill="#D4AF37"/>
-                    <path d="M15 25 C18 22, 22 28, 25 25 C28 22, 32 25, 35 23" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
-                    <text x="11" y="41" font-family='Arial' font-size='5.5' font-weight='bold' fill='#D4AF37' letter-spacing='0.5'>MEXICO</text>
-                    <!-- Texto de GOBIERNO DE MÉXICO en Guinda Oficial -->
-                    <text x="55" y="24" font-family='Open Sans, Helvetica, Arial' font-size='15' font-weight='900' fill='#A1233B' letter-spacing='0.5'>GOBIERNO DE</text>
-                    <text x="55" y="42" font-family='Open Sans, Helvetica, Arial' font-size='19' font-weight='900' fill='#A1233B' letter-spacing='1'>MÉXICO</text>
-                </svg>
+                <!-- Imagen en alta definición libre de bloqueos con fondo transparente incluido -->
+                <img src="https://wikimedia.org" alt="Gobierno de México">
             </div>
             <div class="gob-nav-right">
                 <a href="#">Trámites</a>
@@ -299,5 +284,6 @@
 
 </body>
 </html>
+
 
 
