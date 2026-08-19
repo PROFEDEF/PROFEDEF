@@ -13,7 +13,75 @@
             background-color: #f4f6f9;
         }
 
-        /* Sección principal azul de la imagen */
+        /* --- NUEVA BARRA DE GOBIERNO (SUPERIOR) --- */
+        .gob-nav {
+            background-color: #0c231e; /* Color verde/marrón oscuro oficial */
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            font-size: 13px;
+        }
+
+        .gob-nav-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .gob-nav-left img {
+            height: 24px; /* Logotipo de México */
+        }
+
+        .gob-nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .gob-nav-links a {
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.85;
+            transition: opacity 0.2s;
+        }
+
+        .gob-nav-links a:hover {
+            opacity: 1;
+        }
+
+        .gob-nav-right {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0.85;
+        }
+
+        .gob-nav-right:hover {
+            opacity: 1;
+        }
+
+        /* Lupa dibujada con CSS puro */
+        .icon-lupa {
+            width: 12px;
+            height: 12px;
+            border: 2px solid white;
+            border-radius: 50%;
+            position: relative;
+            display: inline-block;
+        }
+        .icon-lupa::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 6px;
+            background: white;
+            bottom: -4px;
+            right: -2px;
+            transform: rotate(-45deg);
+        }
+
+        /* --- SECCIÓN HERO AZUL --- */
         .hero-section {
             background: linear-gradient(135deg, #1c3b57 0%, #2c5270 100%);
             color: white;
@@ -27,7 +95,7 @@
             font-weight: 600;
         }
 
-        /* Contenedor del Buscador */
+        /* Buscador */
         .search-container {
             display: flex;
             max-width: 600px;
@@ -48,7 +116,7 @@
         }
 
         .search-container button {
-            background-color: #7a1c31; /* Color guinda del botón buscar */
+            background-color: #7a1c31; /* Color guinda del botón */
             color: white;
             border: none;
             padding: 12px 25px;
@@ -56,31 +124,25 @@
             border-radius: 30px;
             cursor: pointer;
             font-weight: bold;
-            transition: background 0.2s;
         }
 
-        .search-container button:hover {
-            background-color: #5a1424;
-        }
-
-        /* Contenedor de las 4 tarjetas inferiores */
+        /* Contenedor de Tarjetas */
         .cards-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 20px;
             max-width: 1000px;
-            margin: -30px auto 0 auto; /* Hace que floten sobre el fondo azul */
+            margin: -30px auto 0 auto;
             padding: 0 20px;
         }
 
-        /* Estilo de cada tarjeta individual */
         .stat-card {
             background: white;
             border-radius: 8px;
             padding: 20px;
             text-align: center;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-bottom: 5px solid #7a1c31; /* Línea guinda inferior */
+            border-bottom: 5px solid #7a1c31;
         }
 
         .stat-number {
@@ -101,18 +163,33 @@
 </head>
 <body>
 
-    <!-- Bloque Azul Superior -->
+    <!-- NUEVA BARRA SUPERIOR GOB.MX -->
+    <nav class="gob-nav">
+        <div class="gob-nav-left">
+            <!-- Escudo oficial de México -->
+            <img src="https://diputados.gob.mx" alt="Gobierno de México">
+            <div class="gob-nav-links">
+                <a href="#">Trámites</a>
+                <a href="#">Gobierno</a>
+            </div>
+        </div>
+        <div class="gob-nav-right">
+            <!-- Icono de lupa -->
+            <span class="icon-lupa"></span>
+        </div>
+    </nav>
+
+    <!-- Bloque Azul Principal -->
     <div class="hero-section">
         <h1>Portal de Consulta de Trámites</h1>
         
-        <!-- Barra de Búsqueda -->
         <div class="search-container">
             <input type="text" placeholder="¿Qué trámite estás buscando o necesitas?">
             <button>Buscar</button>
         </div>
     </div>
 
-    <!-- Bloque de las 4 Tarjetas de Contadores numéricos -->
+    <!-- Bloque de las 4 Tarjetas -->
     <div class="cards-container">
         <div class="stat-card">
             <div class="stat-number">2200</div>
@@ -134,3 +211,4 @@
 
 </body>
 </html>
+
