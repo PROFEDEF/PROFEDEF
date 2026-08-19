@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Gob MX</title>
+    <!-- Importación de la tipografía oficial utilizada en el portal -->
+    <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        /* Estilos Base de gob.mx */
+        /* Estilos Base y Tipografía */
         body {
             font-family: 'Open Sans', Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f6f9;
-            color: #333;
+            color: #333333;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* 1. BARRA SUPERIOR INSTITUCIONAL (OSCURA VERDE) */
         .gob-nav {
-            background-color: #0c231e; /* El color exacto de la página que estás clonando */
+            background-color: #0c231e;
             padding: 10px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 2px solid #13322b;
+            box-sizing: border-box;
         }
 
         .gob-nav-container {
@@ -38,7 +42,7 @@
             align-items: center;
         }
 
-        /* Enlace de la imagen oficial con fondo transparente directo */
+        /* Logotipo vectorial HD transparente libre de bloqueos */
         .gob-nav-left img {
             height: 30px;
             display: block;
@@ -55,9 +59,10 @@
             text-decoration: none;
             font-size: 13px;
             font-weight: 600;
+            letter-spacing: 0.3px;
         }
 
-        /* Lupa de la barra superior */
+        /* Icono de Lupa de la Barra de Navegación */
         .icon-search-nav {
             width: 13px;
             height: 13px;
@@ -91,7 +96,7 @@
             margin: 0 auto;
         }
 
-        /* Menú secundario horizontal */
+        /* Menú horizontal blanco con transparencias */
         .sub-menu {
             display: flex;
             justify-content: center;
@@ -104,6 +109,7 @@
             text-decoration: none;
             font-size: 15px;
             font-weight: 500;
+            transition: color 0.2s ease;
         }
 
         .sub-menu a:hover {
@@ -114,6 +120,7 @@
             font-size: 38px;
             font-weight: 400;
             margin: 0 0 25px 0;
+            letter-spacing: -0.5px;
         }
 
         /* 3. BUSCADOR INTEGRADO CON LUPA INTERNA */
@@ -126,9 +133,10 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             display: flex;
             align-items: center;
+            box-sizing: border-box;
         }
 
-        /* Lupa gris al inicio de la barra */
+        /* Lupa gris posicionada al inicio interno del cuadro de texto */
         .icon-search-input {
             width: 14px;
             height: 14px;
@@ -137,6 +145,7 @@
             position: absolute;
             left: 15px;
             display: inline-block;
+            box-sizing: border-box;
         }
         .icon-search-input::after {
             content: '';
@@ -152,11 +161,12 @@
         .search-wrapper input {
             width: 100%;
             border: none;
-            padding: 14px 15px 14px 45px;
+            padding: 14px 15px 14px 45px; /* Margen para no pisar la lupa interna */
             font-size: 15px;
             border-radius: 4px 0 0 4px;
             outline: none;
             color: #333333;
+            font-family: 'Open Sans', sans-serif;
         }
 
         .search-wrapper button {
@@ -169,19 +179,22 @@
             border-radius: 0 4px 4px 0;
             cursor: pointer;
             font-weight: 600;
+            font-family: 'Open Sans', sans-serif;
+            transition: background-color 0.2s ease;
         }
 
         .search-wrapper button:hover {
             background-color: #541424;
         }
 
-        /* 4. BLOQUE DE LAS 4 TARJETAS */
+        /* 4. BLOQUE DE LAS 4 TARJETAS DE DATOS SUPERPUESTAS */
         .cards-section {
             max-width: 1140px;
             margin: -35px auto 40px auto;
             padding: 0 15px;
             position: relative;
             z-index: 10;
+            box-sizing: border-box;
         }
 
         .cards-grid {
@@ -196,7 +209,8 @@
             padding: 20px 10px;
             text-align: center;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            border-bottom: 4px solid #6a1c32;
+            border-bottom: 4px solid #6a1c32; /* Línea inferior guinda */
+            box-sizing: border-box;
         }
 
         .card-number {
@@ -212,12 +226,28 @@
             font-weight: 600;
         }
 
-        @media (max-width: 768px) {
+        /* Ajustes de Responsividad */
+        @media (max-width: 992px) {
             .cards-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 28px;
+            }
             .sub-menu {
-                display: none;
+                display: none; /* Oculta en pantallas pequeñas tal cual la referencia */
+            }
+            .gob-nav-right {
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -228,7 +258,7 @@
     <nav class="gob-nav">
         <div class="gob-nav-container">
             <div class="gob-nav-left">
-                <!-- Imagen en alta definición libre de bloqueos con fondo transparente incluido -->
+                <!-- Imagen transparente oficial con filtro optimizado -->
                 <img src="https://wikimedia.org" alt="Gobierno de México">
             </div>
             <div class="gob-nav-right">
@@ -284,6 +314,5 @@
 
 </body>
 </html>
-
 
 
