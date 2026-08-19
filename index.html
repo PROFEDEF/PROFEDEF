@@ -3,25 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal de Consulta de Trámites - Clon Fiel</title>
+    <title>Portal Gob MX</title>
     <style>
-        /* Estilos generales */
+        /* Estilos Base de gob.mx */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Open Sans', Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f6f9;
+            color: #333;
         }
 
-        /* BARRA SUPERIOR OSCURA ORIGINAL */
+        /* 1. BARRA SUPERIOR INSTITUCIONAL (OSCURA) */
         .gob-nav {
-            background-color: #0c231e; /* Color verde/marrón oscuro original */
-            color: white;
+            background-color: #0c231e;
+            padding: 10px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 40px;
-            font-size: 13px;
+            border-bottom: 2px solid #13322b;
+        }
+
+        .gob-nav-container {
+            width: 100%;
+            max-width: 1170px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .gob-nav-left {
@@ -29,187 +38,186 @@
             align-items: center;
         }
 
-        /* Contenedor del Logotipo Oficial */
-        .gob-logo-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .gob-logo-container img {
-            height: 32px; /* Tamaño ideal para la barra superior */
+        /* Logo oficial exacto en formato vector */
+        .gob-nav-left img {
+            height: 28px;
             display: block;
         }
 
-        /* Contenedor derecho para Trámites, Gobierno y Lupa */
-        .gob-nav-right-group {
+        .gob-nav-right {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 20px;
         }
 
-        .gob-nav-right-group a {
+        .gob-nav-right a {
             color: #ffffff;
             text-decoration: none;
-            opacity: 0.85;
-            font-weight: 400; /* Fuente original del código pasado */
+            font-size: 13px;
+            font-weight: 600;
         }
 
-        .gob-nav-right-group a:hover {
-            opacity: 1;
-        }
-
-        /* Lupa blanca de la barra de navegación */
-        .icon-lupa-nav {
-            width: 12px;
-            height: 12px;
-            border: 2px solid white;
+        /* Lupa nativa de la barra superior */
+        .icon-search-nav {
+            width: 13px;
+            height: 13px;
+            border: 2px solid #ffffff;
             border-radius: 50%;
             position: relative;
             display: inline-block;
             cursor: pointer;
         }
-        .icon-lupa-nav::after {
+        .icon-search-nav::after {
             content: '';
             position: absolute;
             width: 2px;
             height: 6px;
-            background: white;
+            background: #ffffff;
             bottom: -4px;
             right: -2px;
             transform: rotate(-45deg);
         }
 
-        /* SECCIÓN AZUL PRINCIPAL */
+        /* 2. SECCIÓN PRINCIPAL (HERO) AZUL */
         .hero-section {
-            background: linear-gradient(180deg, #1f3a52 0%, #2a4d6c 100%);
-            color: white;
+            background-image: linear-gradient(to bottom, #1c3b57 0%, #2c5270 100%);
+            padding: 30px 15px 70px 15px;
             text-align: center;
-            padding: 40px 20px 80px 20px;
-            position: relative;
+            color: #ffffff;
         }
 
-        /* Menú interno */
+        .hero-container {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        /* Menú secundario horizontal blanco con transparencias */
         .sub-menu {
             display: flex;
             justify-content: center;
             gap: 25px;
-            margin-bottom: 40px;
-            font-size: 14px;
+            margin-bottom: 35px;
         }
 
         .sub-menu a {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
+            font-size: 15px;
             font-weight: 500;
         }
 
         .sub-menu a:hover {
-            color: white;
+            color: #ffffff;
         }
 
         .hero-section h1 {
-            font-size: 34px;
-            margin: 0 0 30px 0;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            font-size: 38px;
+            font-weight: 400;
+            margin: 0 0 25px 0;
         }
 
-        /* CONTENEDOR DEL BUSCADOR */
-        .search-container {
+        /* 3. CONTENEDOR DEL BUSCADOR INTEGRADO CON LUPA INTERNA */
+        .search-wrapper {
+            position: relative;
+            max-width: 620px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             display: flex;
             align-items: center;
-            max-width: 650px;
-            margin: 0 auto;
-            background: white;
-            padding: 5px 5px 5px 15px;
-            border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        /* Lupa gris dentro del buscador */
-        .icon-lupa-input {
+        /* Lupa gris posicionada al inicio de la barra */
+        .icon-search-input {
             width: 14px;
             height: 14px;
-            border: 2px solid #a0aec0;
+            border: 2px solid #757575;
             border-radius: 50%;
-            position: relative;
+            position: absolute;
+            left: 15px;
             display: inline-block;
-            margin-right: -5px;
         }
-        .icon-lupa-input::after {
+        .icon-search-input::after {
             content: '';
             position: absolute;
             width: 2px;
             height: 6px;
-            background: #a0aec0;
+            background: #757575;
             bottom: -4px;
             right: -2px;
             transform: rotate(-45deg);
         }
 
-        .search-container input {
-            flex: 1;
+        .search-wrapper input {
+            width: 100%;
             border: none;
-            padding: 14px 15px;
+            padding: 14px 15px 14px 45px; /* Espacio para que el texto no pise la lupa */
             font-size: 15px;
-            border-radius: 30px;
+            border-radius: 4px 0 0 4px;
             outline: none;
-            color: #333;
+            color: #333333;
         }
 
-        .search-container button {
-            background-color: #7a1c31; /* Color guinda del botón */
-            color: white;
+        .search-wrapper button {
+            background-color: #6a1c32; /* El guinda exacto */
+            color: #ffffff;
             border: none;
-            padding: 12px 35px;
+            padding: 0 25px;
             font-size: 15px;
-            border-radius: 30px;
+            height: 48px;
+            border-radius: 0 4px 4px 0;
             cursor: pointer;
-            font-weight: bold;
+            font-weight: 600;
         }
 
-        /* CONTENEDOR DE LAS 4 TARJETAS */
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            max-width: 1050px;
-            margin: -40px auto 0 auto;
-            padding: 0 20px;
+        .search-wrapper button:hover {
+            background-color: #541424;
+        }
+
+        /* 4. BLOQUE DE LAS 4 TARJETAS DE DATOS DE ABAJO */
+        .cards-section {
+            max-width: 1140px;
+            margin: -35px auto 40px auto;
+            padding: 0 15px;
             position: relative;
             z-index: 10;
         }
 
-        .stat-card {
-            background: white;
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .data-card {
+            background: #ffffff;
             border-radius: 4px;
-            padding: 25px 15px;
+            padding: 20px 10px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-bottom: 5px solid #7a1c31;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-bottom: 4px solid #6a1c32; /* Línea de base guinda */
         }
 
-        .stat-number {
-            font-size: 38px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 8px;
+        .card-number {
+            font-size: 34px;
+            font-weight: 700;
+            color: #333333;
+            margin-bottom: 5px;
         }
 
-        .stat-label {
-            font-size: 11px;
-            color: #666;
-            text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 0.3px;
+        .card-text {
+            font-size: 13px;
+            color: #666666;
+            font-weight: 600;
         }
 
+        /* Optimización Móvil */
         @media (max-width: 768px) {
-            .cards-container {
+            .cards-grid {
                 grid-template-columns: repeat(2, 1fr);
-                margin-top: -20px;
             }
-            .gob-nav, .sub-menu {
+            .sub-menu {
                 display: none;
             }
         }
@@ -217,61 +225,63 @@
 </head>
 <body>
 
-    <!-- BARRA SUPERIOR OSCURA CON TIPOGRAFÍA PASADA Y LOGO NUEVO -->
+    <!-- 1. Barra de Navegación Institucional Oficial -->
     <nav class="gob-nav">
-        <div class="gob-nav-left">
-            <div class="gob-logo-container">
-                <!-- Tu imagen cargada de forma directa y 100% segura -->
+        <div class="gob-nav-container">
+            <div class="gob-nav-left">
+                <!-- Logotipo exacto del Escudo + Gobierno de México -->
                 <img src="https://wikimedia.org" alt="Gobierno de México">
             </div>
-        </div>
-        
-        <div class="gob-nav-right-group">
-            <a href="#">Trámites</a>
-            <a href="#">Gobierno</a>
-            <span class="icon-lupa-nav"></span>
+            <div class="gob-nav-right">
+                <a href="#">Trámites</a>
+                <a href="#">Gobierno</a>
+                <span class="icon-search-nav"></span>
+            </div>
         </div>
     </nav>
 
-    <!-- SECCIÓN AZUL PRINCIPAL -->
+    <!-- 2. Sección Principal Azul con Menú de Navegación e H1 -->
     <div class="hero-section">
-        <div class="sub-menu">
-            <a href="#">Inicio</a>
-            <a href="#">Trámites</a>
-            <a href="#">Gobierno</a>
-            <a href="#">Participa</a>
-            <a href="#">Datos</a>
-        </div>
-
-        <h1>Portal de Consulta de Trámites</h1>
-        
-        <!-- BUSCADOR CON LUPA INTERNA -->
-        <div class="search-container">
-            <span class="icon-lupa-input"></span>
-            <input type="text" placeholder="Escribe el trámite que deseas consultar...">
-            <button>Buscar</button>
-        </div>
-    </div>
-
-    <!-- LAS 4 TARJETAS INFERIORES -->
-    <div class="cards-container">
-        <div class="stat-card">
-            <div class="stat-number">2200</div>
-            <div class="stat-label">Visualizadores de datos</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">6285</div>
-            <div class="stat-label">Bases de datos</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">184</div>
-            <div class="stat-label">Instituciones</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">28</div>
-            <div class="stat-label">Categorías</div>
+        <div class="hero-container">
+            <div class="sub-menu">
+                <a href="#">Inicio</a>
+                <a href="#">Trámites</a>
+                <a href="#">Gobierno</a>
+                <a href="#">Participa</a>
+                <a href="#">Datos</a>
+            </div>
+            <h1>Portal de Consulta de Trámites</h1>
+            
+            <!-- 3. Formulario de Búsqueda Con Lupa Interna -->
+            <div class="search-wrapper">
+                <span class="icon-search-input"></span>
+                <input type="text" placeholder="Buscar">
+                <button type="button">Buscar</button>
+            </div>
         </div>
     </div>
+
+    <!-- 4. Bloque de Módulos Estadísticos -->
+    <section class="cards-section">
+        <div class="cards-grid">
+            <div class="data-card">
+                <div class="card-number">2200</div>
+                <div class="card-text">Visualizaciones de datos</div>
+            </div>
+            <div class="data-card">
+                <div class="card-number">6285</div>
+                <div class="card-text">Bases de datos</div>
+            </div>
+            <div class="data-card">
+                <div class="card-number">184</div>
+                <div class="card-text">Instituciones</div>
+            </div>
+            <div class="data-card">
+                <div class="card-number">28</div>
+                <div class="card-text">Categorías</div>
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>
