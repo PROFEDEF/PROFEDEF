@@ -14,9 +14,9 @@
             color: #333;
         }
 
-        /* 1. BARRA SUPERIOR INSTITUCIONAL (OSCURA) */
+        /* 1. BARRA SUPERIOR INSTITUCIONAL (OSCURA VERDE) */
         .gob-nav {
-            background-color: #0c231e;
+            background-color: #0c231e; /* El color exacto de la página que copias */
             padding: 10px 15px;
             display: flex;
             justify-content: space-between;
@@ -38,9 +38,9 @@
             align-items: center;
         }
 
-        /* Logo oficial exacto en formato vector */
-        .gob-nav-left img {
-            height: 28px;
+        /* Contenedor del logotipo SVG seguro */
+        .gob-logo-svg {
+            height: 34px;
             display: block;
         }
 
@@ -57,7 +57,7 @@
             font-weight: 600;
         }
 
-        /* Lupa nativa de la barra superior */
+        /* Lupa de la barra superior */
         .icon-search-nav {
             width: 13px;
             height: 13px;
@@ -91,7 +91,7 @@
             margin: 0 auto;
         }
 
-        /* Menú secundario horizontal blanco con transparencias */
+        /* Menú secundario horizontal */
         .sub-menu {
             display: flex;
             justify-content: center;
@@ -116,7 +116,7 @@
             margin: 0 0 25px 0;
         }
 
-        /* 3. CONTENEDOR DEL BUSCADOR INTEGRADO CON LUPA INTERNA */
+        /* 3. BUSCADOR INTEGRADO CON LUPA INTERNA */
         .search-wrapper {
             position: relative;
             max-width: 620px;
@@ -128,7 +128,7 @@
             align-items: center;
         }
 
-        /* Lupa gris posicionada al inicio de la barra */
+        /* Lupa gris al inicio de la barra */
         .icon-search-input {
             width: 14px;
             height: 14px;
@@ -152,11 +152,15 @@
         .search-wrapper input {
             width: 100%;
             border: none;
-            padding: 14px 15px 14px 45px; /* Espacio para que el texto no pise la lupa */
+            padding: 14px 15px 14px 45px;
             font-size: 15px;
             border-radius: 4px 0 0 4px;
             outline: none;
             color: #333333;
+        }
+
+        .search-wrapper wrapper input::placeholder {
+            color: #757575;
         }
 
         .search-wrapper button {
@@ -175,7 +179,7 @@
             background-color: #541424;
         }
 
-        /* 4. BLOQUE DE LAS 4 TARJETAS DE DATOS DE ABAJO */
+        /* 4. BLOQUE DE LAS 4 TARJETAS */
         .cards-section {
             max-width: 1140px;
             margin: -35px auto 40px auto;
@@ -196,7 +200,7 @@
             padding: 20px 10px;
             text-align: center;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            border-bottom: 4px solid #6a1c32; /* Línea de base guinda */
+            border-bottom: 4px solid #6a1c32;
         }
 
         .card-number {
@@ -212,7 +216,6 @@
             font-weight: 600;
         }
 
-        /* Optimización Móvil */
         @media (max-width: 768px) {
             .cards-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -225,12 +228,23 @@
 </head>
 <body>
 
-    <!-- 1. Barra de Navegación Institucional Oficial -->
+    <!-- 1. Barra de Navegación Institucional Verde Oscura -->
     <nav class="gob-nav">
         <div class="gob-nav-container">
             <div class="gob-nav-left">
-                <!-- Logotipo exacto del Escudo + Gobierno de México -->
-                <img src="https://wikimedia.org" alt="Gobierno de México">
+                <!-- LOGOTIPO EN CÓDIGO VECTORIAL (SVG): No depende de internet, CARGA SIEMPRE -->
+                <svg class="gob-logo-svg" viewBox="0 0 260 50" xmlns="http://w3.org">
+                    <!-- Círculo Dorado del Escudo -->
+                    <circle cx="25" cy="25" r="18" fill="none" stroke="#D4AF37" stroke-width="2"/>
+                    <circle cx="25" cy="25" r="14" fill="none" stroke="#D4AF37" stroke-width="1" stroke-dasharray="2,2"/>
+                    <!-- Silueta del Águila Simplificada -->
+                    <path d="M21 20 C21 16, 29 16, 29 20 C29 24, 25 32, 25 32 Z" fill="#D4AF37"/>
+                    <path d="M15 25 C18 22, 22 28, 25 25 C28 22, 32 25, 35 23" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
+                    <text x="11" y="41" font-family='Arial' font-size='5.5' font-weight='bold' fill='#D4AF37' letter-spacing='0.5'>MEXICO</text>
+                    <!-- Texto de GOBIERNO DE MÉXICO en Guinda Oficial -->
+                    <text x="55" y="24" font-family='Open Sans, Helvetica, Arial' font-size='15' font-weight='900' fill='#A1233B' letter-spacing='0.5'>GOBIERNO DE</text>
+                    <text x="55" y="42" font-family='Open Sans, Helvetica, Arial' font-size='19' font-weight='900' fill='#A1233B' letter-spacing='1'>MÉXICO</text>
+                </svg>
             </div>
             <div class="gob-nav-right">
                 <a href="#">Trámites</a>
@@ -240,7 +254,7 @@
         </div>
     </nav>
 
-    <!-- 2. Sección Principal Azul con Menú de Navegación e H1 -->
+    <!-- 2. Sección Principal Azul con Menú de Navegación -->
     <div class="hero-section">
         <div class="hero-container">
             <div class="sub-menu">
